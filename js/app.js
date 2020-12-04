@@ -388,15 +388,7 @@ let slider_images = new Swiper('.posts__image-slider ', {
         },
     }
 });
-// Loading posts
-let coll = document.querySelector('.btn-loading');
-let con = document.getElementsByClassName('portfolio__item portfolio__loading');
 
-coll.addEventListener('click', _removeClasses)
-function _removeClasses() {
-    con[0].classList.remove('portfolio__loading')
-    if (con[0]) _removeClasses()
-}
 
 
 // Isotope
@@ -456,7 +448,16 @@ function radioButtonGroup(buttonGroup) {
 
 // outNum(3587, 'number-1');
 
+// Loading posts
+let coll = document.querySelector('.btn-loading');
+let con = document.getElementsByClassName('portfolio__item portfolio__loading');
 
+coll.addEventListener('click', _removeClasses)
+function _removeClasses() {
+    con[0].classList.remove('portfolio__loading')
+    if (con[0]) _removeClasses()
+    grid.arrange();
+}
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let forms = document.querySelectorAll('form');
 if (forms.length > 0) {
